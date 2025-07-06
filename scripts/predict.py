@@ -2,8 +2,9 @@ import numpy as np
 import joblib
 
 # Load saved model and scaler
-model = joblib.load('../model/svm_model.joblib')
-scaler = joblib.load('../model/scaler.joblib')
+# Correct path when running from project root
+model = joblib.load('model/svm_model.joblib')
+scaler = joblib.load('model/scaler.joblib')
 
 # Sample input (can be replaced with dynamic input later)
 input_data = (197.07600,206.89600,192.05500,0.00289,0.00001,0.00166,0.00168,
