@@ -1,18 +1,18 @@
 # 🧠 Parkinson's Disease Detection using Machine Learning
 
-This project uses a Support Vector Machine (SVM) to detect Parkinson's Disease based on biomedical voice measurements. It is built in Python and includes data preprocessing, model training, and evaluation.
+This project uses a Support Vector Machine (SVM) to detect Parkinson's Disease based on biomedical voice measurements. It is built in Python and includes data preprocessing, model training, evaluation, and model saving for later use.
 
 ---
 
 ## 📌 Problem Statement
 
-Early detection of Parkinson's Disease is crucial for treatment. This project uses an ML model trained on voice-based features to predict if a person has Parkinson's Disease.
+Early detection of Parkinson's Disease is crucial for treatment. This project uses a machine learning model trained on voice-based features to predict whether a person has Parkinson's Disease.
 
 ---
 
 ## 📂 Dataset
 
-- **Source**: [UCI Parkinson’s Dataset](https://archive.ics.uci.edu/ml/datasets/parkinsons)
+- **Source**: [UCI Parkinson’s Dataset](https://archive.ics.uci.edu/ml/datasets/parkinsons)  
 - **Rows**: 195 samples  
 - **Features**: 22 voice-based biomedical features  
 - **Target**: `status` (0 = Healthy, 1 = Parkinson’s)
@@ -23,23 +23,23 @@ Early detection of Parkinson's Disease is crucial for treatment. This project us
 
 - Python (Jupyter Notebook)
 - Pandas, NumPy
-- Scikit-learn (SVM, accuracy)
+- Scikit-learn (SVM, accuracy, model saving)
 - Matplotlib, Seaborn
+- `joblib` (to save model and scaler)
 
 ---
 
 ## 📊 Results
 
-- **Training Accuracy**: 95.00%
-- **Testing Accuracy**: 94.87%
+- **Training Accuracy**: 91.03%  
+- **Testing Accuracy**: 84.62%
 
 ---
 
-## 🧪 How to Run
+## 💾 Model Saving
 
-1. Clone the repository  
-2. Navigate to the project folder  
-3. Run the Jupyter notebook inside `notebooks/`
+After training, the model and scaler are saved using `joblib` for future use:
 
-```bash
-jupyter notebook notebooks/Parkinsons_Prediction.ipynb
+```python
+joblib.dump(model, 'model/svm_model.joblib')
+joblib.dump(scaler, 'model/scaler.joblib')
